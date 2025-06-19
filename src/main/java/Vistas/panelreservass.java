@@ -14,12 +14,14 @@ import javax.swing.table.DefaultTableModel;
 
 public class panelreservass extends javax.swing.JPanel {
 
-    panelreserva pr =  new panelreserva();
+    private panelreserva pr;
     panelcliente pc = new panelcliente();
-    
-    public panelreservass() {
+
+    public panelreservass(String accesoUsuario) {
         initComponents();
         FlatLightLaf.setup();
+        pr = new panelreserva(accesoUsuario); 
+        pc = new panelcliente();
         ShowJPanel(pr);
     }
      public void ShowJPanel(JPanel p) {

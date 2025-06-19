@@ -329,7 +329,7 @@ public class frminicio extends javax.swing.JFrame {
     private void btnReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservasActionPerformed
 
         panelreserva.idusuario=Integer.parseInt(lblidpersona.getText());
-        ShowJPanel(new panelreservass());
+        ShowJPanel(new panelreservass(accesoUsuario));
     }//GEN-LAST:event_btnReservasActionPerformed
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
@@ -354,11 +354,11 @@ public class frminicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
-        ShowJPanel(new panelproductos());
+        ShowJPanel(new panelproductos(accesoUsuario));
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnHabitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabitacionesActionPerformed
-        ShowJPanel(new panelhabitacion());
+        ShowJPanel(new panelhabitacion(accesoUsuario));
     }//GEN-LAST:event_btnHabitacionesActionPerformed
 
     private void btnBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackupActionPerformed

@@ -25,14 +25,15 @@ public class panelhabitacion extends javax.swing.JPanel {
 
     private Component rootPane;
     private boolean mostrandoDisponibles = false;
+    private String accesoUsuario;
 
 
     /**
      * Creates new form panelhabitacion
      */
-    public panelhabitacion() {
+    public panelhabitacion(String accesoUsuario) {
         initComponents();
-        initComponents();
+         this.accesoUsuario = accesoUsuario;
         mostrar("");
         inhabilitar();
         FlatLightLaf.setup();
@@ -106,19 +107,18 @@ void mostrar(String buscar) {
         habitacionController func = new habitacionController();
         List<habitacion> lista = func.mostrar(buscar);
 
-        // Definir las columnas del modelo
+     
         String[] titulos = {
             "ID", "Número", "Piso", "Descripción", "Características",
             "Precio Diario", "Estado", "Tipo"
         };
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
 
-        // Verificar si hay resultados
+   
         if (lista.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No se encontraron resultados.");
         }
 
-        // Llenar el modelo con los datos de la lista
         for (habitacion h : lista) {
             Object[] fila = new Object[]{
                 h.getIdhabitacion(),
@@ -698,21 +698,26 @@ private void mostrarSoloDisponibles() {
 }
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        // TODO add your handling code here:
+        if (!accesoUsuario.equalsIgnoreCase("ADMINISTRADOR")) {
+            JOptionPane.showMessageDialog(this,
+                    "No tiene permisos para eliminar habitaciones.",
+                    "Acceso denegado",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         if (!txtidhabitacion.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar la Habitación?","Confirmar",2);
+            int confirmacion = JOptionPane.showConfirmDialog(rootPane,
+                    "¿Estás seguro de eliminar la habitación?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
-            if (confirmacion==0) {
-                habitacionController func = new habitacionController ();
-                habitacion dts= new habitacion();
-
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                habitacionController func = new habitacionController();
+                habitacion dts = new habitacion();
                 dts.setIdhabitacion(Integer.parseInt(txtidhabitacion.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
-
             }
-
         }
     }//GEN-LAST:event_btneliminarActionPerformed
 private Connection connection = new conexion().conectar();

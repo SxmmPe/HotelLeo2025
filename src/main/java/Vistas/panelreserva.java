@@ -18,13 +18,15 @@ import javax.swing.table.DefaultTableModel;
 public class panelreserva extends javax.swing.JPanel {
 
     private Component rootPane;
+    private String accesoUsuario;
 
     /**
      * Creates new form panelreserva
      */
-    public panelreserva() {
+    public panelreserva(String accesoUsuario) {
         initComponents();
         FlatLightLaf.setup();
+         this.accesoUsuario = accesoUsuario;
         mostrar("");
         inhabilitar();
         
@@ -821,21 +823,30 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        // TODO add your handling code here:
+        if (!accesoUsuario.equalsIgnoreCase("ADMINISTRADOR")) {
+            JOptionPane.showMessageDialog(this,
+                    "No tiene permisos para eliminar reservas.",
+                    "Acceso denegado",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         if (!txtidreserva.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar la Reserva?","Confirmar",2);
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    rootPane,
+                    "¿Está seguro de eliminar la reserva?",
+                    "Confirmar",
+                    JOptionPane.YES_NO_OPTION
+            );
 
-            if (confirmacion==0) {
-                reservaController func = new reservaController ();
-                reserva dts= new reserva();
-
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                reservaController func = new reservaController();
+                reserva dts = new reserva();
                 dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
-
             }
-
         }
     }//GEN-LAST:event_btneliminarActionPerformed
 
