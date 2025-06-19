@@ -290,7 +290,7 @@ void mostrar(String buscar) {
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel12.setText("Sueldo:");
 
-        cboacceso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Digitador" }));
+        cboacceso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Recepcionista" }));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel5.setText("Acceso:");
