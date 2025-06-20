@@ -216,9 +216,9 @@ void mostrar(String buscar) {
             String valor2 = tablalistado.getValueAt(fila, 4).toString();  // Precio venta
 
             // Asignar valores a los campos del otro panel
-            panelconsumof.txtidproducto.setText(cod);
-            panelconsumof.txtproducto.setText(valor1);
-            panelconsumof.txtprecio_venta.setText(valor2);
+            frmconsumos.txtidproducto.setText(cod);
+            frmconsumos.txtproducto.setText(valor1);
+            frmconsumos.txtprecio_venta.setText(valor2);
 
             // Cerrar o esconder este formulario
             this.setVisible(false);

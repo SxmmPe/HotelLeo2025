@@ -27,41 +27,45 @@ public class ConsumoDAOImpl implements ConsumoDAO{
    public Double totalconsumo;
    
    
-   @Override
-    public List<consumo> mostrar(String buscar) {
-        List<consumo> listaConsumos = new ArrayList<>();
-        totalregistros = 0;
-        totalconsumo = 0.0;
+@Override
+public List<consumo> mostrar(String buscar) {
+    List<consumo> listaConsumos = new ArrayList<>();
+    totalregistros = 0;
+    totalconsumo = 0.0;
 
-        sSQL = "select c.idconsumo, c.idreserva, c.idproducto, p.nombre, c.cantidad, c.precio_venta, c.estado "
-             + "from consumo c inner join producto p on c.idproducto = p.idproducto "
-             + "where c.idreserva = " + buscar + " order by c.idconsumo desc";
+    String sSQL = "SELECT c.idconsumo, c.idreserva, c.idproducto, p.nombre, c.cantidad, c.precio_venta, c.estado "
+                + "FROM consumo c INNER JOIN producto p ON c.idproducto = p.idproducto "
+                + "WHERE c.idreserva = ? ORDER BY c.idconsumo DESC";
 
-        try {
-            Statement st = cn.createStatement();
-            ResultSet rs = st.executeQuery(sSQL);
+    try {
+        PreparedStatement pst = cn.prepareStatement(sSQL);
+        pst.setInt(1, Integer.parseInt(buscar)); // Asume que buscar es un ID numérico
+        ResultSet rs = pst.executeQuery();
 
-            while (rs.next()) {
-                consumo c = new consumo();
-                c.setIdconsumo(rs.getInt("idconsumo"));
-                c.setIdreserva(rs.getInt("idreserva"));
-                c.setIdproducto(rs.getInt("idproducto"));
-                c.setProducto(rs.getString("nombre")); 
-                c.setCantidad(rs.getDouble("cantidad"));
-                c.setPrecio_venta(rs.getDouble("precio_venta"));
-                c.setEstado(rs.getString("estado"));
+        while (rs.next()) {
+            consumo c = new consumo();
+            c.setIdconsumo(rs.getInt("idconsumo"));
+            c.setIdreserva(rs.getInt("idreserva"));
+            c.setIdproducto(rs.getInt("idproducto"));
+            c.setProducto(rs.getString("nombre")); 
+            c.setCantidad(rs.getDouble("cantidad"));
+            c.setPrecio_venta(rs.getDouble("precio_venta"));
+            c.setEstado(rs.getString("estado"));
 
-                listaConsumos.add(c);
+            listaConsumos.add(c);
 
-                totalregistros++;
-                totalconsumo += c.getCantidad() * c.getPrecio_venta();
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showConfirmDialog(null, e);
+            totalregistros++;
+            totalconsumo += c.getCantidad() * c.getPrecio_venta();
         }
-        return listaConsumos;
+
+    } catch (Exception e) {
+        JOptionPane.showConfirmDialog(null, e);
     }
+    return listaConsumos;
+}
+
+
+
 
 
    

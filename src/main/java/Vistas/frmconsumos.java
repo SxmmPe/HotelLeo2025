@@ -15,12 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author chind
  */
-public class panelconsumof extends javax.swing.JFrame {
+public class frmconsumos extends javax.swing.JFrame {
     public static String idreserva;
     public static String cliente;
     private Component rootPane;
     
-    public panelconsumof() {
+    public frmconsumos() {
         initComponents();
         this.setLocationRelativeTo(null);
         mostrar(idreserva);
@@ -552,7 +552,7 @@ void mostrar(String buscar) {
 
     private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
        int fila = tablalistado.rowAtPoint(evt.getPoint());
-    if (fila < 0) return; // evita errores si no se hizo click sobre una fila válida
+    if (fila < 0) return; 
 
     btnguardar.setText("Editar");
     habilitar();
@@ -622,20 +622,21 @@ void mostrar(String buscar) {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(panelconsumof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmconsumos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(panelconsumof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmconsumos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(panelconsumof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmconsumos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(panelconsumof.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmconsumos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new panelconsumof().setVisible(true);
+                new frmconsumos().setVisible(true);
             }
         });
     }

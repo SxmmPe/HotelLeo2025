@@ -7,7 +7,7 @@ public class pago {
     private int idreserva;
     private String tipo_comprobante;
     private String num_comprobante;
-    private Double igv;
+  
     private Double total_pago;
     private Date fecha_emision;
     private Date fecha_pago;
@@ -15,12 +15,11 @@ public class pago {
     public pago() {
     }
 
-    public pago(int idpago, int idreserva, String tipo_comprobante, String num_comprobante, Double igv, Double total_pago, Date fecha_emision, Date fecha_pago) {
+    public pago(int idpago, int idreserva, String tipo_comprobante, String num_comprobante, Double total_pago, Date fecha_emision, Date fecha_pago) {
         this.idpago = idpago;
         this.idreserva = idreserva;
         this.tipo_comprobante = tipo_comprobante;
         this.num_comprobante = num_comprobante;
-        this.igv = igv;
         this.total_pago = total_pago;
         this.fecha_emision = fecha_emision;
         this.fecha_pago = fecha_pago;
@@ -56,14 +55,6 @@ public class pago {
 
     public void setNum_comprobante(String num_comprobante) {
         this.num_comprobante = num_comprobante;
-    }
-
-    public Double getIgv() {
-        return igv;
-    }
-
-    public void setIgv(Double igv) {
-        this.igv = igv;
     }
 
     public Double getTotal_pago() {
