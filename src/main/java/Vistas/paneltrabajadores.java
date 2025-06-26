@@ -133,6 +133,104 @@ void mostrar(String buscar) {
     }
 }
 
+private boolean validarCamposEmpleado() {
+
+    String nombre = txtnombre.getText().trim();
+    if (nombre.isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar un nombre.");
+        txtnombre.requestFocus();
+        return false;
+    } else if (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+        JOptionPane.showMessageDialog(rootPane, "El nombre no debe contener números ni caracteres especiales.");
+        txtnombre.requestFocus();
+        return false;
+    }
+
+
+    String apaterno = txtapaterno.getText().trim();
+    if (apaterno.isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar el apellido paterno.");
+        txtapaterno.requestFocus();
+        return false;
+    } else if (!apaterno.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+        JOptionPane.showMessageDialog(rootPane, "El apellido paterno no debe contener números ni caracteres especiales.");
+        txtapaterno.requestFocus();
+        return false;
+    }
+
+    String amaterno = txtamaterno.getText().trim();
+    if (amaterno.isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar el apellido materno.");
+        txtamaterno.requestFocus();
+        return false;
+    } else if (!amaterno.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+        JOptionPane.showMessageDialog(rootPane, "El apellido materno no debe contener números ni caracteres especiales.");
+        txtamaterno.requestFocus();
+        return false;
+    }
+
+    String dni = txtnum_documento.getText().trim();
+    if (dni.isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar el número de documento.");
+        txtnum_documento.requestFocus();
+        return false;
+    } else if (!dni.matches("\\d{7,8}")) {
+        JOptionPane.showMessageDialog(rootPane, "El número de documento debe tener entre 7 y 8 dígitos numéricos.");
+        txtnum_documento.requestFocus();
+        return false;
+    }
+
+   
+    if (txtdireccion.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar la dirección.");
+        txtdireccion.requestFocus();
+        return false;
+    }
+    if (txttelefono.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar el teléfono.");
+        txttelefono.requestFocus();
+        return false;
+    } else if (!txttelefono.getText().matches("\\d{9}")) {
+        JOptionPane.showMessageDialog(rootPane, "El teléfono debe contener 9 dígitos.");
+        txttelefono.requestFocus();
+        return false;
+    }
+
+    if (txtemail.getText().trim().isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar el email.");
+        txtemail.requestFocus();
+        return false;
+    } else if (!txtemail.getText().matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar un email válido.");
+        txtemail.requestFocus();
+        return false;
+    }
+
+ 
+    String sueldoStr = txtsueldo.getText().trim();
+    if (sueldoStr.isEmpty()) {
+        JOptionPane.showMessageDialog(rootPane, "Debes ingresar el sueldo.");
+        txtsueldo.requestFocus();
+        return false;
+    } else {
+        try {
+            double sueldo = Double.parseDouble(sueldoStr);
+            if (sueldo < 0) {
+                JOptionPane.showMessageDialog(rootPane, "El sueldo no puede ser negativo.");
+                txtsueldo.requestFocus();
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(rootPane, "El sueldo debe ser un número válido.");
+            txtsueldo.requestFocus();
+            return false;
+        }
+    }
+
+    return true; 
+}
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -209,7 +307,7 @@ void mostrar(String buscar) {
         jLabel7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel7.setText("Tipo Doc:");
 
-        cbotipo_documento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DNI", "LM", "CE", "Otros" }));
+        cbotipo_documento.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "DNI", "OTRO" }));
         cbotipo_documento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbotipo_documentoActionPerformed(evt);
@@ -290,7 +388,7 @@ void mostrar(String buscar) {
         jLabel12.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel12.setText("Sueldo:");
 
-        cboacceso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Digitador" }));
+        cboacceso.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Recepcionista" }));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel5.setText("Acceso:");
@@ -596,44 +694,9 @@ void mostrar(String buscar) {
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         // TODO add your handling code here:
-        if (txtnombre.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un Nombre para el Trabajador");
-            txtnombre.requestFocus();
-            return;
-        }
-        if (txtapaterno.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un apellido para el Trabajador");
-            txtapaterno.requestFocus();
-            return;
-        }
-
-        if (txtamaterno.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un apellido para el Trabajador");
-            txtamaterno.requestFocus();
-            return;
-        }
-
-        if (txtnum_documento.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un Número de Doc para el Trabajador");
-            txtnum_documento.requestFocus();
-            return;
-        }
-
-        if (txtsueldo.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un Sueldo para el trabajador");
-            txtsueldo.requestFocus();
-            return;
-        }
-        if (txtlogin.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un login para el trabajador");
-            txtlogin.requestFocus();
-            return;
-        }
-        if (txtpassword.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar un password para el trabajador");
-            txtpassword.requestFocus();
-            return;
-        }
+       if (!validarCamposEmpleado()) {
+    return; 
+}
 
         trabajador dts = new trabajador();
         trabajadorController func = new trabajadorController();

@@ -184,7 +184,8 @@ public class frmusuariologin extends javax.swing.JFrame {
             
             if (func.totalregistros >0) {
                 this.dispose();
-                frminicio form = new frminicio();
+                String acceso = tablalistado.getValueAt(0, 4).toString();
+                frminicio form = new frminicio(acceso);
                 form.toFront();
                 
                 frminicio.lblidpersona.setText(tablalistado.getValueAt(0, 0).toString());

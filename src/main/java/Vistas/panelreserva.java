@@ -1,15 +1,18 @@
 
 package Vistas;
 
+import Controlador.consumoController;
 import Modelo.habitacion;
 import Modelo.reserva;
 import Controlador.habitacionController;
 import Controlador.reservaController;
+import Modelo.consumo;
 import Presentacion.frminicio;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Component;
 import java.sql.Date;
 import java.util.Calendar;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -18,13 +21,15 @@ import javax.swing.table.DefaultTableModel;
 public class panelreserva extends javax.swing.JPanel {
 
     private Component rootPane;
+    private String accesoUsuario;
 
     /**
      * Creates new form panelreserva
      */
-    public panelreserva() {
+    public panelreserva(String accesoUsuario) {
         initComponents();
         FlatLightLaf.setup();
+         this.accesoUsuario = accesoUsuario;
         mostrar("");
         inhabilitar();
         
@@ -48,6 +53,11 @@ public class panelreserva extends javax.swing.JPanel {
         tablalistado.getColumnModel().getColumn(5).setMinWidth(0);
         tablalistado.getColumnModel().getColumn(5).setPreferredWidth(0);
     }
+    void ocultar_columnas_consumo() {
+    tablalistaConsumos.getColumnModel().getColumn(0).setMaxWidth(0);
+    tablalistaConsumos.getColumnModel().getColumn(0).setMinWidth(0);
+    tablalistaConsumos.getColumnModel().getColumn(0).setPreferredWidth(0);
+}
 
     void inhabilitar() {
         txtidreserva.setVisible(false);
@@ -135,6 +145,38 @@ public class panelreserva extends javax.swing.JPanel {
         }
     }
     
+void mostrarConsumosReserva(String idreserva) {
+    try {
+        consumoController func = new consumoController();
+        List<consumo> lista = func.buscarConsumo(idreserva);
+
+        String[] titulos = {"ID", "idreserva", "idproducto", "producto", "cantidad", "Precio Venta", "Estado"};
+        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+
+        for (consumo c : lista) {
+            Object[] fila = new Object[7];
+            fila[0] = c.getIdconsumo();
+            fila[1] = c.getIdreserva();
+            fila[2] = c.getIdproducto();
+            fila[3] = c.getProducto();
+            fila[4] = c.getCantidad();
+            fila[5] = c.getPrecio_venta();
+            fila[6] = c.getEstado();
+            modelo.addRow(fila);
+        }
+
+        tablalistaConsumos.setModel(modelo);
+        ocultar_columnas_consumo();
+
+        lbltotalregistros.setText("Total Registros " + func.totalregistros);
+        lblconsumo.setText("Consumo Total s/. " + func.totalconsumo);
+
+    } catch (Exception e) {
+     
+    }
+}
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -182,6 +224,9 @@ public class panelreserva extends javax.swing.JPanel {
         lbltotalregistros = new javax.swing.JLabel();
         btnverconsumo = new javax.swing.JButton();
         btnrealizarpagos = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablalistaConsumos = new javax.swing.JTable();
+        lblconsumo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -329,7 +374,7 @@ public class panelreserva extends javax.swing.JPanel {
                                         .addComponent(jLabel3)
                                         .addGap(49, 49, 49)))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dcfecha_reserva, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                                    .addComponent(dcfecha_reserva, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                                     .addComponent(dcfecha_ingresa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtcosto_alojamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(dcfecha_salida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -496,10 +541,38 @@ public class panelreserva extends javax.swing.JPanel {
             }
         });
 
+        tablalistaConsumos.setBackground(new java.awt.Color(0, 51, 51));
+        tablalistaConsumos.setForeground(new java.awt.Color(255, 255, 255));
+        tablalistaConsumos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tablalistaConsumos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tablalistaConsumos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablalistaConsumosMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(tablalistaConsumos);
+
+        lblconsumo.setForeground(new java.awt.Color(0, 0, 0));
+        lblconsumo.setText("jLabel3");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblconsumo)
+                .addGap(59, 59, 59))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -512,14 +585,17 @@ public class panelreserva extends javax.swing.JPanel {
                         .addGap(47, 47, 47)
                         .addComponent(btneliminar)
                         .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane4)
+                        .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnverconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
+                        .addGap(18, 18, 18)
                         .addComponent(btnrealizarpagos, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addGap(37, 37, 37))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,13 +609,17 @@ public class panelreserva extends javax.swing.JPanel {
                             .addComponent(jLabel9)
                             .addComponent(txtbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnverconsumo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnrealizarpagos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbltotalregistros))
-                .addGap(17, 17, 17))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblconsumo)
+                .addGap(9, 9, 9))
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -791,7 +871,7 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
     }//GEN-LAST:event_btnbuscaclienteActionPerformed
 
     private void tablalistadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistadoMouseClicked
-        // TODO add your handling code here:
+       
         btnguardar.setText("Editar");
         habilitar();
         btneliminar.setEnabled(true);
@@ -813,6 +893,14 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
         dcfecha_salida.setDate(Date.valueOf(tablalistado.getValueAt(fila, 10).toString()));
         txtcosto_alojamiento.setText(tablalistado.getValueAt(fila, 11).toString());
         cboestado.setSelectedItem(tablalistado.getValueAt(fila, 12).toString());
+         
+        if (fila >= 0) {
+            String idreserva = tablalistado.getValueAt(fila, 0).toString();
+
+            if (idreserva != null && !idreserva.trim().isEmpty()) {
+                mostrarConsumosReserva(idreserva);
+            }
+        }
     }//GEN-LAST:event_tablalistadoMouseClicked
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
@@ -821,21 +909,30 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        // TODO add your handling code here:
+        if (!accesoUsuario.equalsIgnoreCase("ADMINISTRADOR")) {
+            JOptionPane.showMessageDialog(this,
+                    "No tiene permisos para eliminar reservas.",
+                    "Acceso denegado",
+                    JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
         if (!txtidreserva.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar la Reserva?","Confirmar",2);
+            int confirmacion = JOptionPane.showConfirmDialog(
+                    rootPane,
+                    "¿Está seguro de eliminar la reserva?",
+                    "Confirmar",
+                    JOptionPane.YES_NO_OPTION
+            );
 
-            if (confirmacion==0) {
-                reservaController func = new reservaController ();
-                reserva dts= new reserva();
-
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                reservaController func = new reservaController();
+                reserva dts = new reserva();
                 dts.setIdreserva(Integer.parseInt(txtidreserva.getText()));
                 func.eliminar(dts);
                 mostrar("");
                 inhabilitar();
-
             }
-
         }
     }//GEN-LAST:event_btneliminarActionPerformed
 
@@ -847,10 +944,10 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
             JOptionPane.showMessageDialog(this, "Por favor, selecciona una fila de la tabla para ver el consumo.");
             return;
         }
-        panelconsumof.idreserva = tablalistado.getValueAt(fila, 0).toString();
-        panelconsumof.cliente = tablalistado.getValueAt(fila, 4).toString();
+        frmconsumos.idreserva = tablalistado.getValueAt(fila, 0).toString();
+        frmconsumos.cliente = tablalistado.getValueAt(fila, 4).toString();
 
-        panelconsumof form = new panelconsumof();
+        frmconsumos form = new frmconsumos();
         form.setVisible(true);
 
     }//GEN-LAST:event_btnverconsumoActionPerformed
@@ -873,6 +970,13 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
         form.setVisible(true);
 
     }//GEN-LAST:event_btnrealizarpagosActionPerformed
+
+    private void tablalistaConsumosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablalistaConsumosMouseClicked
+       int fila = tablalistaConsumos.rowAtPoint(evt.getPoint());
+
+    String idconsumo = tablalistaConsumos.getValueAt(fila, 0).toString();
+    String producto = tablalistaConsumos.getValueAt(fila, 3).toString();
+    }//GEN-LAST:event_tablalistaConsumosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -904,7 +1008,10 @@ public int calcularDiasEstadia(Date fechaIngreso, Date fechaSalida) {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JLabel lblconsumo;
     private javax.swing.JLabel lbltotalregistros;
+    private javax.swing.JTable tablalistaConsumos;
     private javax.swing.JTable tablalistado;
     private javax.swing.JTextField txtbuscar;
     public static javax.swing.JTextField txtcliente;

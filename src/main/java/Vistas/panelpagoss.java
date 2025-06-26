@@ -40,6 +40,7 @@ public class panelpagoss extends javax.swing.JFrame {
 
       
     public panelpagoss() {
+         setUndecorated(true);
         initComponents();
         mostrar(idreserva);
           this.setLocationRelativeTo(null);
@@ -98,7 +99,6 @@ public class panelpagoss extends javax.swing.JFrame {
         txtcliente.setEnabled(false);
         txtnum_comprobante.setEnabled(false);
         cbotipo_comprobante.setEnabled(false);
-        txtigv.setEnabled(false);
         txttotal_pago.setEnabled(false);
         txttotalreserva.setEnabled(false);
         dcfecha_emision.setEnabled(false);
@@ -111,7 +111,6 @@ public class panelpagoss extends javax.swing.JFrame {
         btneliminar.setEnabled(false);
         txtidpago.setText("");
         txtnum_comprobante.setText("");
-        txtigv.setText("");
 //        txttotal_pago.setText("");
 
     }
@@ -123,7 +122,6 @@ public class panelpagoss extends javax.swing.JFrame {
         txtcliente.setEnabled(true);
         txtnum_comprobante.setEnabled(true);
         cbotipo_comprobante.setEnabled(true);
-        txtigv.setEnabled(true);
         txttotal_pago.setEnabled(true);
         txttotalreserva.setEnabled(true);
         dcfecha_emision.setEnabled(true);
@@ -136,7 +134,6 @@ public class panelpagoss extends javax.swing.JFrame {
         btneliminar.setEnabled(true);
         txtidpago.setText("");
         txtnum_comprobante.setText("");
-        txtigv.setText("");
         //txttotal_pago.setText("");
 
     }
@@ -208,14 +205,13 @@ void mostrar(String buscar) {
         txttotalreserva = new javax.swing.JTextField();
         txtidhabitacion = new javax.swing.JTextField();
         txthabitacion = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        txtigv = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txttotal_pago = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         dcfecha_emision = new com.toedter.calendar.JDateChooser();
         dcfecha_pago = new com.toedter.calendar.JDateChooser();
+        btnSalir = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablalistado = new javax.swing.JTable();
@@ -343,15 +339,6 @@ void mostrar(String buscar) {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        jLabel8.setText("Igv:");
-
-        txtigv.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtigvActionPerformed(evt);
-            }
-        });
-
         jLabel10.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel10.setText("Total Pago:");
 
@@ -367,58 +354,26 @@ void mostrar(String buscar) {
         jLabel11.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         jLabel11.setText("Fecha Pago:");
 
+        btnSalir.setBackground(new java.awt.Color(204, 0, 51));
+        btnSalir.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout txttotal_reservaLayout = new javax.swing.GroupLayout(txttotal_reserva);
         txttotal_reserva.setLayout(txttotal_reservaLayout);
         txttotal_reservaLayout.setHorizontalGroup(
             txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txttotal_reservaLayout.createSequentialGroup()
-                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtidpago, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel11))
-                                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                                        .addGap(90, 117, Short.MAX_VALUE)
-                                        .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                                        .addGap(35, 35, 35)
-                                        .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(dcfecha_emision, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(dcfecha_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 92, Short.MAX_VALUE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
-                                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnnuevo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(cbotipo_comprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txttotal_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                                                .addComponent(jLabel8)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(txtigv, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                                                .addComponent(jLabel6)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(txtnum_comprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGap(0, 92, Short.MAX_VALUE)))))
-                .addGap(101, 101, 101))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtidpago, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139))
             .addGroup(txttotal_reservaLayout.createSequentialGroup()
                 .addGap(135, 135, 135)
                 .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,7 +386,41 @@ void mostrar(String buscar) {
                         .addComponent(txtidhabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txthabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
+            .addGroup(txttotal_reservaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
+                        .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbotipo_comprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
+                            .addComponent(jLabel10)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txttotal_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtnum_comprobante, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, txttotal_reservaLayout.createSequentialGroup()
+                        .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel11))
+                        .addGap(35, 35, 35)
+                        .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dcfecha_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dcfecha_emision, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         txttotal_reservaLayout.setVerticalGroup(
             txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,29 +449,23 @@ void mostrar(String buscar) {
                 .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtnum_comprobante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(txtigv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(txttotal_pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dcfecha_emision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
                 .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(dcfecha_emision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel11))
-                    .addGroup(txttotal_reservaLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(dcfecha_pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(62, 62, 62)
+                    .addComponent(jLabel11)
+                    .addComponent(dcfecha_pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(87, 87, 87)
                 .addGroup(txttotal_reservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnnuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnguardar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -666,11 +649,7 @@ void mostrar(String buscar) {
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         // TODO add your handling code here:
-        if (txtigv.getText().length() == 0) {
-            JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el igv del Comprobante de pago a generar");
-            txtigv.requestFocus();
-            return;
-        }
+
         if (txttotal_pago.getText().length() == 0) {
             JOptionPane.showConfirmDialog(rootPane, "Debes ingresar el total de pago del comprobante");
             txttotal_pago.requestFocus();
@@ -692,8 +671,22 @@ void mostrar(String buscar) {
         dts.setTipo_comprobante((String) cbotipo_comprobante.getItemAt(seleccionado));
 
         dts.setNum_comprobante(txtnum_comprobante.getText());
-        dts.setIgv(Double.parseDouble(txtigv.getText()));
         dts.setTotal_pago(Double.parseDouble(txttotal_pago.getText()));
+        
+
+        Calendar calPago = dcfecha_pago.getCalendar();
+        Calendar calEmision = dcfecha_emision.getCalendar();
+
+        if (calPago == null || calEmision == null) {
+            JOptionPane.showMessageDialog(rootPane, "Debes seleccionar ambas fechas (emisión y pago).");
+            return;
+        }
+
+        if (calPago.before(calEmision)) {
+            JOptionPane.showMessageDialog(rootPane, "La fecha de pago no puede ser anterior a la fecha de emisión.");
+            dcfecha_pago.requestFocus();
+            return;
+        }
 
         Calendar cal;
         int d,m,a;
@@ -753,10 +746,6 @@ void mostrar(String buscar) {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtidhabitacionActionPerformed
 
-    private void txtigvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtigvActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtigvActionPerformed
-
     private void txttotal_pagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttotal_pagoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txttotal_pagoActionPerformed
@@ -776,17 +765,16 @@ void mostrar(String buscar) {
 
             cbotipo_comprobante.setSelectedItem(tablalistado.getValueAt(fila, 2).toString());
             txtnum_comprobante.setText(tablalistado.getValueAt(fila, 3).toString());
-            txtigv.setText(tablalistado.getValueAt(fila, 4).toString());
-            txttotal_pago.setText(tablalistado.getValueAt(fila, 5).toString());
+            txttotal_pago.setText(tablalistado.getValueAt(fila, 4).toString());
 
-            String fechaEmisionStr = tablalistado.getValueAt(fila, 6).toString();
+            String fechaEmisionStr = tablalistado.getValueAt(fila, 5).toString();
             if (fechaEmisionStr != null && !fechaEmisionStr.isEmpty()) {
                 dcfecha_emision.setDate(java.sql.Date.valueOf(fechaEmisionStr));
             } else {
                 dcfecha_emision.setDate(null);
             }
 
-            String fechaPagoStr = tablalistado.getValueAt(fila, 7).toString();
+            String fechaPagoStr = tablalistado.getValueAt(fila, 6).toString();
             if (fechaPagoStr != null && !fechaPagoStr.isEmpty()) {
                 dcfecha_pago.setDate(java.sql.Date.valueOf(fechaPagoStr));
             } else {
@@ -860,6 +848,10 @@ void mostrar(String buscar) {
         }
     }//GEN-LAST:event_btnImprimirComprobanteConsumoActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+          this.dispose();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -899,6 +891,7 @@ void mostrar(String buscar) {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImprimirComprobante;
     private javax.swing.JButton btnImprimirComprobanteConsumo;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btnguardar;
     private javax.swing.JButton btnnuevo;
@@ -913,7 +906,6 @@ void mostrar(String buscar) {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -930,7 +922,6 @@ void mostrar(String buscar) {
     private javax.swing.JTextField txtidhabitacion;
     private javax.swing.JTextField txtidpago;
     private javax.swing.JTextField txtidreserva;
-    private javax.swing.JTextField txtigv;
     private javax.swing.JTextField txtnum_comprobante;
     private javax.swing.JTextField txttotal_pago;
     private javax.swing.JPanel txttotal_reserva;

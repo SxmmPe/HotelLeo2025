@@ -2,6 +2,7 @@
 package Presentacion;
 
 
+import Modelo.trabajador;
 import Vistas.panelcliente;
 import Vistas.panelhabitacion;
 import Vistas.panelinicio;
@@ -21,10 +22,12 @@ import javax.swing.JPanel;
 
 public class frminicio extends javax.swing.JFrame {
     
-    
-    public frminicio() {
+    private String accesoUsuario;
+
+    public frminicio(String acceso) {
         initComponents();
-           this.setLocationRelativeTo(null);
+        this.accesoUsuario = acceso;
+        this.setLocationRelativeTo(null);
         Fecha();
         ShowJPanel(new panelinicio());
     }
@@ -326,11 +329,18 @@ public class frminicio extends javax.swing.JFrame {
     private void btnReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservasActionPerformed
 
         panelreserva.idusuario=Integer.parseInt(lblidpersona.getText());
-        ShowJPanel(new panelreservass());
+        ShowJPanel(new panelreservass(accesoUsuario));
     }//GEN-LAST:event_btnReservasActionPerformed
 
     private void btnEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosActionPerformed
+        if (accesoUsuario.equalsIgnoreCase("ADMINISTRADOR")) {
         ShowJPanel(new paneltrabajadores());
+    } else {
+        JOptionPane.showMessageDialog(this, 
+            "No tiene permisos para acceder a la gestión de empleados.",
+            "Acceso denegado", 
+            JOptionPane.WARNING_MESSAGE);
+    }
     }//GEN-LAST:event_btnEmpleadosActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
@@ -344,11 +354,11 @@ public class frminicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductosActionPerformed
-        ShowJPanel(new panelproductos());
+        ShowJPanel(new panelproductos(accesoUsuario));
     }//GEN-LAST:event_btnProductosActionPerformed
 
     private void btnHabitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHabitacionesActionPerformed
-        ShowJPanel(new panelhabitacion());
+        ShowJPanel(new panelhabitacion(accesoUsuario));
     }//GEN-LAST:event_btnHabitacionesActionPerformed
 
     private void btnBackupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackupActionPerformed
@@ -391,7 +401,7 @@ public class frminicio extends javax.swing.JFrame {
         FlatLightLaf.setup();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frminicio().setVisible(true);
+                new frmusuariologin().setVisible(true);
             }
         });
     }

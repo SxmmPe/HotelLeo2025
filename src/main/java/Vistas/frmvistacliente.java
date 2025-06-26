@@ -84,6 +84,7 @@ void mostrar(String buscar) {
         btnbuscar = new javax.swing.JButton();
         lbltotalregistros = new javax.swing.JLabel();
         btnsalir2 = new javax.swing.JButton();
+        btnRegistrarCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -138,6 +139,17 @@ void mostrar(String buscar) {
             }
         });
 
+        btnRegistrarCliente.setBackground(new java.awt.Color(0, 102, 0));
+        btnRegistrarCliente.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        btnRegistrarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarCliente.setText("Registrar Cliente");
+        btnRegistrarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -154,8 +166,10 @@ void mostrar(String buscar) {
                 .addGap(80, 80, 80)
                 .addComponent(btnsalir2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
+                .addComponent(btnRegistrarCliente)
+                .addGap(45, 45, 45)
+                .addComponent(lbltotalregistros, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane3)
                 .addContainerGap())
@@ -173,7 +187,8 @@ void mostrar(String buscar) {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnsalir2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbltotalregistros))
+                    .addComponent(lbltotalregistros)
+                    .addComponent(btnRegistrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -229,6 +244,12 @@ void mostrar(String buscar) {
         this.dispose();
     }//GEN-LAST:event_btnsalir2ActionPerformed
 
+    private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
+        frmvistaRegistroRapido vistaRapida = new frmvistaRegistroRapido();
+        vistaRapida.setVisible(true);
+        vistaRapida.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnRegistrarClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -266,6 +287,7 @@ void mostrar(String buscar) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrarCliente;
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btnsalir2;
     private javax.swing.JLabel jLabel9;

@@ -54,19 +54,20 @@ void mostrar(String buscar) {
         List<habitacion> lista = func.mostrarvista(buscar);
 
 
-        String[] titulos = {"Piso", "Número", "Descripción", "Precio Diario"};
+        String[] titulos = {"ID","Piso", "Número", "Descripción", "Precio Diario"};
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
 
         if (lista.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No se encontraron resultados.");
         }
 
-        for (habitacion h : lista) {
+         for (habitacion h : lista) {
             modelo.addRow(new Object[]{
-                h.getPiso(),
+                h.getIdhabitacion(),
                 h.getNumero(),
+                h.getPiso(),
                 h.getDescripcion(),
-                h.getPrecio_diario()
+                h.getPrecio_diario(),           
             });
         }
 
