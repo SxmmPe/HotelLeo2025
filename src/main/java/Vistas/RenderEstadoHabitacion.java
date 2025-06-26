@@ -21,7 +21,7 @@ class RenderEstadoHabitacion extends DefaultTableCellRenderer {
         } else if (estado.equalsIgnoreCase("Ocupado")) {
             c.setBackground(new Color(255, 102, 102)); 
         } else if (estado.equalsIgnoreCase("Mantenimiento")) {
-            c.setBackground(new Color(255, 255, 204)); 
+            c.setBackground(new Color(255, 255, 153)); 
         } else {
             c.setBackground(Color.WHITE); 
         }
