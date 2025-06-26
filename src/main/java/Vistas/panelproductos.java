@@ -12,12 +12,13 @@ import javax.swing.table.DefaultTableModel;
 public class panelproductos extends javax.swing.JPanel {
 
     private Component rootPane;
-
+ private String accesoUsuario;
     /**
      * Creates new form panelproductos
      */
-    public panelproductos() {
+    public panelproductos(String accesoUsuario) {
         initComponents();
+         this.accesoUsuario = accesoUsuario;
         mostrar("");
         inhabilitar();
          txtbuscar.putClientProperty("JTextField.placeholderText", "Ingrese el nombre del producto para buscar");
@@ -548,22 +549,28 @@ void mostrar(String buscar) {
     }//GEN-LAST:event_btnbuscarActionPerformed
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
-        // TODO add your handling code here:
-        if (!txtidproducto.getText().equals("")) {
-            int confirmacion = JOptionPane.showConfirmDialog(rootPane, "Estás seguro de Eliminar el Producto?","Confirmar",2);
+      if (!accesoUsuario.equalsIgnoreCase("ADMINISTRADOR")) {
+        JOptionPane.showMessageDialog(this, 
+            "No tiene permisos para eliminar productos.", 
+            "Acceso denegado", 
+            JOptionPane.WARNING_MESSAGE);
+        return;
+    }
 
-            if (confirmacion==0) {
-                productoController func = new productoController ();
-                producto dts= new producto();
+    if (!txtidproducto.getText().equals("")) {
+        int confirmacion = JOptionPane.showConfirmDialog(rootPane, 
+            "¿Estás seguro de eliminar el producto?", "Confirmar", JOptionPane.YES_NO_OPTION);
 
-                dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
-                func.eliminar(dts);
-                mostrar("");
-                inhabilitar();
+        if (confirmacion == JOptionPane.YES_OPTION) {
+            productoController func = new productoController();
+            producto dts = new producto();
 
-            }
-
+            dts.setIdproducto(Integer.parseInt(txtidproducto.getText()));
+            func.eliminar(dts);
+            mostrar("");
+            inhabilitar();
         }
+    }
     }//GEN-LAST:event_btneliminarActionPerformed
 
     private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
