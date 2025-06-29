@@ -1,49 +1,49 @@
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\clienteController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ProductoDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\trabajador.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelreservass.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ClienteDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\frmvistaproducto.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\TrabajadorDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\consumo.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\pago.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\frmvistacliente.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelreserva.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\HabitacionDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelpagoss.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ReservaDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ConsumoDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelcliente.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\frmconsumos.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Presentacion\frmusuariologin.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\frmvistaRegistroRapido.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\TrabajadorDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\habitacionController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\PagoDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Presentacion\BackupAutomatico.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelinicio.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\pagoController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\productoController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\reserva.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\cliente.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\PagoDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ProductoDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelhabitacion.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\habitacion.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Conexion\conexion.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\reservaController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\RenderEstadoHabitacion.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\HabitacionDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\NewJFrame.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\producto.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Presentacion\frminicio.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\consumoController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Controlador\trabajadorController.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ClienteDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\frmvistahabitacion.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ConsumoDAO.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\DAO\ReservaDAOImpl.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Modelo\persona.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\panelproductos.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\paneltrabajadores.java
-C:\Users\Samir\Documents\SEPTIMO CICLO\Herramientas informaticas\HotelLeo\HotelLeo\src\main\java\Vistas\RenderStockProductos.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Conexion\conexion.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\clienteController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\consumoController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\habitacionController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\pagoController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\productoController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\reservaController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Controlador\trabajadorController.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ClienteDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ClienteDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ConsumoDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ConsumoDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\HabitacionDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\HabitacionDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\PagoDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\PagoDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ProductoDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ProductoDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ReservaDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\ReservaDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\TrabajadorDAO.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\DAO\TrabajadorDAOImpl.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\cliente.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\consumo.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\habitacion.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\pago.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\persona.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\producto.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\reserva.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Modelo\trabajador.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Presentacion\BackupAutomatico.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Presentacion\frminicio.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Presentacion\frmusuariologin.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\frmconsumos.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\frmvistacliente.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\frmvistahabitacion.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\frmvistaproducto.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\frmvistaRegistroRapido.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\NewJFrame.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelcliente.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelhabitacion.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelinicio.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelpagoss.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelproductos.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelreserva.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\panelreservass.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\paneltrabajadores.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\RenderEstadoHabitacion.java
+C:\Users\Lenovo LOQ\Documents\Hotel\HotelLeo2025\src\main\java\Vistas\RenderStockProductos.java
