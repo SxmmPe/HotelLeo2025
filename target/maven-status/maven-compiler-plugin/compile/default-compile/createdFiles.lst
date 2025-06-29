@@ -21,7 +21,6 @@ Vistas\paneltrabajadores$3.class
 Presentacion\frmusuariologin$1.class
 Vistas\panelhabitacion$8.class
 DAO\PagoDAO.class
-Validator\Validator$1.class
 Vistas\NewJFrame$1.class
 Controlador\habitacionController.class
 Presentacion\frminicio$6.class
@@ -32,7 +31,6 @@ Vistas\frmvistaRegistroRapido.class
 Controlador\reservaController.class
 DAO\ConsumoDAOImpl.class
 Modelo\pago.class
-Validator\Patrones.class
 Vistas\frmvistaRegistroRapido$7.class
 Vistas\panelreserva$11.class
 Vistas\paneltrabajadores.class
@@ -127,7 +125,6 @@ Modelo\producto.class
 Vistas\frmconsumos$9.class
 Modelo\reserva.class
 Vistas\frmconsumos$10.class
-Validator\TipoValidacion.class
 Vistas\frmvistahabitacion$2.class
 Vistas\panelreserva$1.class
 Modelo\trabajador.class
@@ -151,12 +148,10 @@ Vistas\paneltrabajadores$7.class
 Vistas\frmconsumos$4.class
 Vistas\panelcliente.class
 Vistas\panelpagoss$5.class
-Validator\Validator.class
 Vistas\panelreserva$9.class
 DAO\ReservaDAOImpl.class
 Vistas\panelproductos$9.class
 DAO\ProductoDAOImpl.class
-Validator\Validator$2.class
 Vistas\panelreservass.class
 Vistas\frmconsumos$7.class
 Vistas\frmvistaRegistroRapido$9.class
@@ -172,6 +167,7 @@ Controlador\consumoController.class
 DAO\ClienteDAO.class
 DAO\HabitacionDAOImpl.class
 Vistas\frmconsumos$6.class
+Vistas\paneltrabajadores$16.class
 Vistas\panelhabitacion$12.class
 DAO\HabitacionDAO.class
 Presentacion\frminicio$2.class

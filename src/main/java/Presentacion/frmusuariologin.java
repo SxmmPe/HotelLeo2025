@@ -195,7 +195,6 @@ public class frmusuariologin extends javax.swing.JFrame {
                 
                 new BackupAutomatico().iniciarBackupDiario();
                 form.setVisible(true);
-                form.setExtendedState(MAXIMIZED_BOTH);
                 
             }
             

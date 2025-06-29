@@ -146,6 +146,7 @@ public class frminicio extends javax.swing.JFrame {
         });
 
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarSesionActionPerformed(evt);
@@ -180,6 +181,7 @@ public class frminicio extends javax.swing.JFrame {
 
         btnBackup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnBackup.setText("BACKUP");
+        btnBackup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBackup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackupActionPerformed(evt);
