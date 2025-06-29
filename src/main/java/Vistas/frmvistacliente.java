@@ -4,8 +4,11 @@ package Vistas;
 
 import Presentacion.*;
 import Controlador.clienteController;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.kordamp.ikonli.materialdesign2.MaterialDesignS;
+import org.kordamp.ikonli.swing.FontIcon;
 
 
 public class frmvistacliente extends javax.swing.JFrame {
@@ -17,6 +20,8 @@ public class frmvistacliente extends javax.swing.JFrame {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
+         FontIcon fb = FontIcon.of(MaterialDesignS.SEARCH_WEB, 30, Color.BLACK);
+         btnbuscar.setIcon(fb);
     }
     
     void ocultar_columnas() {
@@ -117,7 +122,6 @@ void mostrar(String buscar) {
         jLabel9.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel9.setText("Buscar");
 
-        btnbuscar.setBackground(new java.awt.Color(51, 51, 51));
         btnbuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

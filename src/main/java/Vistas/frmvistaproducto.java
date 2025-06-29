@@ -4,9 +4,12 @@ package Vistas;
 
 import Controlador.productoController;
 import Modelo.producto;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.kordamp.ikonli.materialdesign2.MaterialDesignS;
+import org.kordamp.ikonli.swing.FontIcon;
 
 
 public class frmvistaproducto extends javax.swing.JFrame {
@@ -15,6 +18,8 @@ public class frmvistaproducto extends javax.swing.JFrame {
         initComponents();
         mostrar("");
         this.setLocationRelativeTo(null);
+         FontIcon fb = FontIcon.of(MaterialDesignS.SEARCH_WEB, 30, Color.BLACK);
+         btnbuscar.setIcon(fb);
         
     }
 
@@ -120,7 +125,6 @@ void mostrar(String buscar) {
 
         jLabel11.setText("Buscar");
 
-        btnbuscar.setBackground(new java.awt.Color(51, 51, 51));
         btnbuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnbuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {

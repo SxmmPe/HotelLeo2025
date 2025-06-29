@@ -330,10 +330,9 @@ void mostrar(String buscar) {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de Consumos"));
 
-        tablalistado.setBackground(new java.awt.Color(0, 51, 51));
         tablalistado.setForeground(new java.awt.Color(255, 255, 255));
         tablalistado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -365,10 +364,8 @@ void mostrar(String buscar) {
             }
         });
 
-        lbltotalregistros.setForeground(new java.awt.Color(255, 255, 255));
         lbltotalregistros.setText("Registros");
 
-        lblconsumo.setForeground(new java.awt.Color(255, 255, 255));
         lblconsumo.setText("jLabel3");
 
         btnsalir.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N

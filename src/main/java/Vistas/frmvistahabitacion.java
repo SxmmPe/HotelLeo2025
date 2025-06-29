@@ -5,11 +5,14 @@ import Presentacion.*;
 import Controlador.habitacionController;
 import Modelo.habitacion;
 import com.formdev.flatlaf.FlatLightLaf;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import org.kordamp.ikonli.materialdesign2.MaterialDesignS;
+import org.kordamp.ikonli.swing.FontIcon;
 
 
 public class frmvistahabitacion extends javax.swing.JFrame {
@@ -38,7 +41,9 @@ public class frmvistahabitacion extends javax.swing.JFrame {
                 buscarAutomaticamente();
             }
         });
-
+        
+         FontIcon fb = FontIcon.of(MaterialDesignS.SEARCH_WEB, 30, Color.BLACK);
+         btnbuscar.setIcon(fb);
 
     }
     
@@ -143,7 +148,6 @@ private void buscarAutomaticamente() {
             }
         });
 
-        btnbuscar.setBackground(new java.awt.Color(51, 51, 51));
         btnbuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnbuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
